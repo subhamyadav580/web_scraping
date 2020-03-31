@@ -32,5 +32,8 @@ jobs = pd.DataFrame({
     'Location': job_location,
     'Time' : job_time
 })
-# Days = jobs["temp"].str.extract("(?P<temp_num>\d+)", expand=False)
+
+#To save the dataframe in csv
+file_to_save = 'jobs.csv'
+jobs.to_csv(file_to_save)
 print(jobs)
