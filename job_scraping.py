@@ -35,5 +35,5 @@ jobs = pd.DataFrame({
 
 #To save the dataframe in csv
 file_to_save = 'jobs.csv'
-jobs.to_csv(file_to_save)
+jobs.to_csv(file_to_save,index=False)
 print(jobs)
