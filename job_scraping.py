@@ -12,6 +12,13 @@ job_company = []
 job_location = []
 job_time = []
 
+results = soup.find(id="ResultsContainer")
+python_jobs = results.find_all("h2", string=lambda t: "python" in t.lower())
+for p_job in python_jobs:
+    link = p_job.find("a")["href"]
+    print(p_job.text.strip())
+    print(f"Apply here: {link}\n")
+
 for job in soup.find_all('section', class_='card-content'):
     job_titles = job.find('h2', class_='title')
     job_companies = job.find('div', class_='company')
